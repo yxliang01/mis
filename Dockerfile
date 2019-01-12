@@ -35,5 +35,5 @@ ENTRYPOINT ["/usr/local/bin/mis.py"]
 # --------------------
 # HOW TO USE
 # --------------------
-# on a file:
-#    docker run --rm -v `pwd`/formula.cnf:/in msoos/mis /in
+# NOTE: You should put the input under /home/mis or directory that normal user has read/write permissions of
+#    docker run --rm -v `pwd`/formula.cnf:/home/mis/in msoos/mis /home/mis/in
