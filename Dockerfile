@@ -22,8 +22,10 @@ RUN make
 
 # set up for running
 FROM ubuntu:16.04
+RUN adduser mis
 RUN apt-get update && apt-get install --no-install-recommends -y python3 \
     && rm -rf /var/lib/apt/lists/*
+USER mis
 COPY --from=builder /mis/mis.py /usr/local/bin/
 COPY --from=builder /mis/muser2 /usr/local/bin/
 COPY --from=builder /mis/togmus /usr/local/bin/
